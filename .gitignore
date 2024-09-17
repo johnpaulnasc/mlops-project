@@ -1,0 +1,43 @@
+# Python files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Logs
+*.log
+
+# Dados
+data/*.csv
+data/*.xlsx
+data/*.json
+
+# Modelos treinados
+models/
+
+# Docker
+*.env
+Dockerfile
+
+# Virtual environments
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Configurações IDE
+.vscode/
+.idea/
+
+# Arquivos de CI/CD locais
+.jenkins/
