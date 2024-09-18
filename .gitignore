@@ -12,16 +12,8 @@ __pycache__/
 *.log
 
 # Dados
-data/*.csv
 data/*.xlsx
 data/*.json
-
-# Modelos treinados
-models/
-
-# Docker
-*.env
-Dockerfile
 
 # Virtual environments
 env/
