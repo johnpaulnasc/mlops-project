@@ -10,6 +10,9 @@ app = Flask(__name__)
 model = joblib.load('models/churn_model.pkl')
 le_gender = joblib.load('models/le_gender.pkl')
 le_contract = joblib.load('models/le_contract.pkl')
+le_partner = joblib.load('models/le_partner.pkl')  
+le_dependents = joblib.load('models/le_dependents.pkl')
+le_internetservice = joblib.load('models/le_internetservice.pkl') 
 scaler = joblib.load('models/scaler.pkl')
 
 # Defina a ordem das features usadas no treinamento
@@ -50,6 +53,9 @@ def predict():
         # Aplicar o pré-processamento (LabelEncoder, etc.)
         data_df['gender'] = le_gender.transform(data_df['gender'])
         data_df['Contract'] = le_contract.transform(data_df['Contract'])
+        data_df['Partner'] = le_partner.transform(data_df['Partner'])
+        data_df['Dependents'] = le_dependents.transform(data_df['Dependents'])
+        data_df['InternetService'] = le_internetservice.transform(data_df['InternetService'])
 
         # Escalar os dados
         data_df_scaled = scaler.transform(data_df)
