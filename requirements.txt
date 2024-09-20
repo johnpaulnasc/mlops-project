@@ -1,4 +1,8 @@
-flask
-scikit-learn
+mlflow
 pandas
+scikit-learn
+flask
 joblib
+apache-airflow
+docker
+prometheus_client

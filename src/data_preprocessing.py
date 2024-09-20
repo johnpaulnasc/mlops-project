@@ -1,3 +1,4 @@
+# src/data_preprocessing.py
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
@@ -9,19 +10,13 @@ def preprocess_data(input_path, output_path):
     # Remover valores ausentes
     data = data.dropna()
     
-    # Remover colunas irrelevantes (ex: 'customerID')
-    if 'customerID' in data.columns:
-        data = data.drop(columns=['customerID'])
-    
     # Codificar variáveis categóricas
     labelencoder = LabelEncoder()
-    
-    # Codificar todas as colunas categóricas
     for column in data.columns:
-        if data[column].dtype == 'object':  # Verifica se a coluna é do tipo 'object' (string/categórica)
+        if data[column].dtype == 'object':
             data[column] = labelencoder.fit_transform(data[column])
     
-    # Definir a coluna alvo (ex: 'Churn')
+    # Definir a coluna alvo
     target = 'Churn'
     
     # Features e labels
@@ -31,7 +26,7 @@ def preprocess_data(input_path, output_path):
     # Dividir os dados em treino e teste
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     
-    # Escalar os dados numéricos
+    # Escalar os dados
     scaler = StandardScaler()
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)

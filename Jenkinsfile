@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/seu-usuario/seu-repositorio.git'
+                git 'https://github.com/johnpaulnasc/mlops-project.git'
             }
         }
 
